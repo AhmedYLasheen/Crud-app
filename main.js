@@ -130,3 +130,26 @@ productNameInput.onkeyup=function(){
 
     }
 }
+
+
+
+
+var CategoryAlert = document.getElementById('CategoryAlert');
+
+
+productCategoryInput.onkeyup=function(){
+    var CategoryRejes=/^([a-z]{2,8}|[أ-ي]{2,10})$/;
+    if (CategoryRejes.test(productCategoryInput.value)) {
+        addBtn.removeAttribute('disabled')
+        productCategoryInput.classList.add('is-valid')
+        productCategoryInput.classList.remove('is-invalid')
+        CategoryAlert.classList.add('d-none');
+
+    }else{
+        addBtn.disabled=true
+        productCategoryInput.classList.add('is-invalid')
+        productCategoryInput.classList.remove('is-valid')
+        CategoryAlert.classList.remove('d-none');
+
+    }
+}
